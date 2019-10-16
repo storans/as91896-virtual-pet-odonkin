@@ -12,7 +12,7 @@ pets = ['Dog', 'Cat', 'Fish', 'Rabbit']
 print("Welcome to Virtual Pet!")
 print()
 print(input("Please choose an animal to be your virtual pet: "))
-
-
-
 #
+
+
+
