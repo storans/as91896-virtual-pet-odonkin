@@ -1,3 +1,6 @@
+# Dictionary to help code work
+pets = ["dog", "cat",  "bunny", "turtle"]
+
 # This allows the user to input what animal they would like as their virtual pet
 virtual_pet = input("Please choose an animal off the list to be your virtual pet: ").strip().lower()
 
@@ -21,9 +24,14 @@ print("Awesome! You now own a {} named {}! ".format(virtual_pet, pet_name))
 while True:
   try:
     weight = int(input("Please enter your pet's weight: "))
-    break
+    if weight > 200:
+      print("This is not an avaliable weight!")
+    elif weight < 5:
+      print("This is not am avaliable weight")
+    else:
+      print("Awesome!")
+       # Prints animals name and weight
+      print("{}'s weight is {} kgs.".format(pet_name, weight))
+      break
   except ValueError:
     print("That was not a valid number!")
-
-# Prints pets name and weight
-print("{}'s weight is {} kgs.".format(pet_name, weight))
