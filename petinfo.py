@@ -16,6 +16,8 @@ pet_name = input("Please choose a name for your {}: ".format(virtual_pet).strip(
 # Show the user their animal and name
 print("Awesome! You now own a {} named {}! ".format(virtual_pet, pet_name))
 
+#Allows user to make sure they are entering a number with digits not with letters
+# Creates loop if it does not fit the criteria
 while True:
   try:
     weight = int(input("Please enter your pet's weight: "))
