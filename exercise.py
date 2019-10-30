@@ -4,6 +4,16 @@ PET_ACTIVITY = {"exercise": 2, "feed": 1}
 # Pets exercise options (dictionary)
 exercises = {"park playdate": 1, "beach time": 2, "jumbo jog":3}
 
+def choose_activity():
+    if option == 1:
+        activity = "park playdate"
+    elif option == 2:
+        activity = "beach time"
+    else:
+        activity = "jumbo jog"
+    return activity
+
+
 def check_integer(question, low, high, error):
     valid = False
     while not valid:
@@ -22,7 +32,7 @@ def check_integer(question, low, high, error):
 # Give the user to pick whether they want to exercise or feed their pet.
 pet_activities = input("Would you like to exercise or feed your pet?: ").strip().lower()
 
-weight = 35
+WEIGHT = 35
 
 # This allows the user to see the options and pick one they would like to do if they choose to exercise their pet
 if pet_activities == "exercise":
@@ -36,8 +46,8 @@ while True:
   option = check_integer("Please enter number of the choices above:", 1, 4, "This is not an option")
 
   if option == 1 or option == 2 or option == 3:
-    activity = choose_activity(option)
-    end_weight = weight - activity
+    activity = choose_activity()
+    end_weight = pet_weight - activity
     print("Your pet now weights {}".format(end_weight))
     if end_weight > 200:
       print("Your pet has not had enough exercise! It has passed away!")
