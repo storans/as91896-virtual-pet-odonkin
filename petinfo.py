@@ -25,9 +25,9 @@ while True:
   try:
     weight = int(input("Please enter your pet's weight: "))
     if weight > 200:
-      print("This is not an avaliable weight!")
+      print("This is not an available weight!")
     elif weight < 5:
-      print("This is not am avaliable weight")
+      print("This is not am available weight")
     else:
       print("Awesome!")
        # Prints animals name and weight
