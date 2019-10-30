@@ -4,6 +4,8 @@ PET_ACTIVITY = {"exercise": 2, "feed": 1}
 # Pets exercise options (dictionary)
 exercises = {"park playdate": 1, "beach time": 2, "jumbo jog":3}
 
+end_weight = 35
+
 def choose_activity():
     if option == 1:
         activity = "park playdate"
@@ -47,7 +49,7 @@ while True:
 
   if option == 1 or option == 2 or option == 3:
     activity = choose_activity()
-    end_weight = pet_weight - activity
+    print(end_weight)
     print("Your pet now weights {}".format(end_weight))
     if end_weight > 200:
       print("Your pet has not had enough exercise! It has passed away!")
@@ -59,3 +61,8 @@ while True:
 
     else:
         print("At the moment, your pet is healthy! Good Job! :)")
+
+else:
+    print("Would you like to quit the game?")
+
+
