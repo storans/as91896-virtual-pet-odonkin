@@ -39,8 +39,6 @@ def check_integer(question, low, high, error):
 # Give the user to pick whether they want to exercise or feed their pet.
 pet_activities = input("Would you like to exercise or feed your pet?: ").strip().lower()
 
-weight = 35
-
 def exercise_pet(activity, weight):
     weight -= exercises[activity]
     return weight

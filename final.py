@@ -1,24 +1,21 @@
+# Dictionary to help code work
+pets = ["dog", "cat",  "bunny", "turtle"]
+
 # Dictionaries for pet activities
 PET_ACTIVITY = {"exercise": 2, "feed": 1}
 
 # Pets exercise options (dictionary)
-exercises = {"park playdate": 0, "beach time": 0, "jumbo jog":0}
-exercise_calories = {"park playdate": 0.2, "beach time": 0.3, "jumbo jog":0.4}
+exercises = {"park playdate": 1, "beach time": 2, "jumbo jog":3}
 
 # Food options for pet (dictionary)
-food_list = {"kibble": 3, "carrot":2, "canned food":4, "seaweed":2, "vegetables": 3, "water":1}
+food_list = {"water":1, "vegetables": 2,"canned food":3}
+
 
 # Prints welcome screen
 print("Welcome to Virtual Pet!")
 
-# List for pets available in Virtual Pet
-pets = ["dog", "cat",  "bunny", "turtle"]
-
 # Prints pet list
 print(pets)
-
-# Dictionary to help code work
-pets = ["dog", "cat",  "bunny", "turtle"]
 
 # This allows the user to input what animal they would like as their virtual pet
 virtual_pet = input("Please choose an animal off the list to be your virtual pet: ").strip().lower()
@@ -46,31 +43,14 @@ while True:
     if weight > 200:
       print("This is not an available weight!")
     elif weight < 5:
-      print("This is not am available weight")
+      print("This is not an available weight")
     else:
       print("Awesome!")
        # Prints animals name and weight
       print("{}'s weight is {} kgs.".format(pet_name, weight))
       break
   except ValueError:
-    print("That was not a valid number!")
-
-# Dictionaries for pet activities
-PET_ACTIVITY = {"exercise": 2, "feed": 1}
-
-# Pets exercise options (dictionary)
-exercises = {"park playdate": 1, "beach time": 2, "jumbo jog":3}
-
-end_weight = 35
-
-def choose_activity():
-    if option == 1:
-        activity = "park playdate"
-    elif option == 2:
-        activity = "beach time"
-    else:
-        activity = "jumbo jog"
-    return activity
+    print("That was not a valid weight or number, please enter a weight between 5 and 200!")
 
 
 def check_integer(question, low, high, error):
@@ -89,65 +69,49 @@ def check_integer(question, low, high, error):
             print(error)
 
 # Give the user to pick whether they want to exercise or feed their pet.
-pet_activities = input("Would you like to exercise or feed your pet?: ").strip().lower()
+pet_activities = input("Would you like to exercise or feed {}?: ".format(pet_name)).strip().lower()
 
-WEIGHT = 35
+def exercise_pet(activity, weight):
+    weight -= exercises[activity]
+    return weight
 
 # This allows the user to see the options and pick one they would like to do if they choose to exercise their pet
-if pet_activities == "exercise":
-  print("Awesome, let's have a look at the exercises!")
+if exercises == "exercise":
+    print("Awesome, let's have a look at the exercises!")
 while True:
-  print("1. Enter Park Playdate\n"
-  "2. Enter Beach Time\n"
-  "3. Enter Jumbo Jog\n"
-  "4. Exit\n")
+    print("1. Enter Park Playdate\n"
+    "2. Enter Beach Time\n"
+    "3. Enter Jumbo Jog\n"
+    "4. Exit\n")
 
-  option = check_integer("Please enter number of the choices above:", 1, 4, "This is not an option")
+    option = check_integer("Please enter number of the choices above:", 1, 4, "This is not an option")
 
-  if option == 1 or option == 2 or option == 3:
-    activity = choose_activity()
-    print(end_weight)
-    print("Your pet now weights {}".format(end_weight))
-    if end_weight > 200:
-      print("Your pet has not had enough exercise! It has passed away!")
-      break
 
-    elif end_weight < 5:
-      print("You pet has done too much exercise and not had enough to eat, it has passed away!")
-      break
+    if option == 1:
+        activity = "park playdate"
+    elif option == 2:
+        activity = "beach time"
+    elif option ==3:
+        activity = "jumbo jog"
+    elif option == 4:
+        print("You have chosen to quit game! Thank you playing :)")
+    else:
+        print("This is not an option. Please choose another number.")
+
+    weight = exercise_pet(activity, weight)
+    print("{} now weights {}".format(pet_name, weight))
+    if weight > 200:
+        print("Your pet has not had enough exercise! It has passed away!")
+        print("Thank you for playing, rerun program to start again.")
+        break
+
+    elif weight < 5:
+        print("{} has done too much exercise and not had enough to eat, they has passed away!".format(pet_name))
+        print("Thank you for playing, rerun program to start again.")
+        break
 
     else:
-        print("At the moment, your pet is healthy! Good Job! :)")
-
-          food_list = {"kibble": 3, "canned food":4, "seaweed":2, "vegetables": 3, "water":1}
-
-if pet_activities == "feed":
-  print("Awesome, let's open the pantry!")
-while True:
-  print("1. Kibble\n"
-  "2. Vegetables\n"
-  "3. Canned Food\n"
-  "4. Seaweed\n"
-  "5. Vegetables\n"
-  "6. Water\n"
-  "7. Exit\n")
-
-  option = check_integer("Please enter number of the choices above:", 1, 7, "This is not an option")
-
-  if option == 1 or option == 2 or option == 3 or option == 4 or option == 5 or option == 6:
-    activity = choose_food()
-    print(food_weight)
-    print("Your pet now weights {}".format(food_weight))
-    if foood_weight > 200:
-      print("Your pet has been fed too much! It has passed away!")
-      break
-
-    elif end_weight < 5:
-      print("You pet has not had enough to eat, it has passed away!")
-      break
-
-    else:
-        print("At the moment, your pet is healthy! Good Job! :)")
-
+        print("At the moment, {} is healthy! Good Job! :)".format(pet_name))
+    break
 
 
