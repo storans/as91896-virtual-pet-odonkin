@@ -1,3 +1,28 @@
+# Function to check whether the choice is an option in feed and exercise
+def check_integer(question, low, high, error):
+    valid = False
+    while not valid:
+        try:
+            number = int(input("{}".format(question)))
+            if low <= number <= high:
+                return number
+            else:
+                print(error)
+                print()
+
+ # If an invalid input is made, the prompt comes up again
+        except ValueError:
+            print(error)
+
+def exercise_pet(activity, weight):
+    weight -= exercises[activity]
+    return weight
+
+def feed_pet(activity, weight):
+    weight += food[activity]
+    return weight
+
+
 # Dictionary to help code work
 pets = ["dog", "cat",  "bunny", "turtle"]
 
@@ -8,8 +33,13 @@ PET_ACTIVITY = {"exercise": 2, "feed": 1}
 exercises = {"park playdate": 1, "beach time": 2, "jumbo jog":3}
 
 # Food options for pet (dictionary)
-food_list = {"water":1, "vegetables": 2,"canned food":3}
+food = {"water":1, "vegetables": 2,"canned food":3}
 
+# Prints welcome screen
+print("Welcome to Virtual Pet!")
+
+# Prints pet list
+print(pets)
 
 # This allows the user to input what animal they would like as their virtual pet
 virtual_pet = input("Please choose an animal off the list to be your virtual pet: ").strip().lower()
@@ -34,9 +64,9 @@ print("Awesome! You now own a {} named {}! ".format(virtual_pet, pet_name))
 while True:
   try:
     weight = int(input("Please enter your pet's weight: "))
-    if weight > 200:
+    if weight > 30:
       print("This is not an available weight!")
-    elif weight < 5:
+    elif weight < 2:
       print("This is not an available weight")
     else:
       print("Awesome!")
@@ -44,63 +74,21 @@ while True:
       print("{}'s weight is {} kgs.".format(pet_name, weight))
       break
   except ValueError:
-    print("That was not a valid weight or number, please enter a weight between 5 and 200!")
-
-# Dictionaries for pet activities
-PET_ACTIVITY = {"exercise": 2, "feed": 1}
-
-# Pets exercise options (dictionary)
-exercises = {"park playdate": 1, "beach time": 2, "jumbo jog":3}
-
-while True:
-  try:
-    weight = int(input("Please enter your pet's weight: "))
-    if weight > 200:
-      print("This is not an available weight!")
-    elif weight < 5:
-      print("This is not am available weight")
-    else:
-      print("Awesome!")
-       # Prints animals name and weight
-      print("'s weight is {} kgs.".format(weight))
-      break
-  except ValueError:
-    print("That was not a valid weight or number, please enter a weight between 5 and 200!")
-
-#def choose_activity()
-
-def check_integer(question, low, high, error):
-    valid = False
-    while not valid:
-        try:
-            number = int(input("{}".format(question)))
-            if low <= number <= high:
-                return number
-            else:
-                print(error)
-                print()
-
- # If an invalid input is made, the prompt comes up again
-        except ValueError:
-            print(error)
+    print("That was not a valid weight or number, please enter a weight between 2 and 30!")
 
 # Give the user to pick whether they want to exercise or feed their pet.
 pet_activities = input("Would you like to exercise or feed your pet?: ").strip().lower()
 
-def exercise_pet(activity, weight):
-    weight -= exercises[activity]
-    return weight
 
 # This allows the user to see the options and pick one they would like to do if they choose to exercise their pet
 if exercises == "exercise":
-    print("Awesome, let's have a look at the exercises!")
-while True:
-    print("1. Enter Park Playdate\n"
-    "2. Enter Beach Time\n"
-    "3. Enter Jumbo Jog\n"
-    "4. Exit\n")
+        print("Awesome, let's have a look at the exercises!")
+        print("1. Enter Park Playdate\n"
+        "2. Enter Beach Time\n"
+        "3. Enter Jumbo Jog\n"
+        "4. Exit\n")
 
-    option = check_integer("Please enter number of the choices above:", 1, 4, "This is not an option, please try another from the list above and type in numbers!")
+        option = check_integer("Please enter number of the choices above:", 1, 4, "This is not an option, please try another from the list above and type in numbers!")
 
 
     if option == 1:
@@ -118,62 +106,18 @@ while True:
     if weight > 200:
         print("Your pet has not had enough exercise! It has passed away!")
         print("Thank you for playing, rerun program to start again.")
-        break
 
     elif weight < 5:
         print("You pet has done too much exercise and not had enough to eat, it has passed away!")
         print("Thank you for playing, rerun program to start again.")
-        break
 
     else:
         print("At the moment, your pet is healthy! Good Job! :)")
-    break
 
-
-# Dictionaries for pet activities
-PET_ACTIVITY = {"exercise": 2, "feed": 1}
-
-# Food options for pet (dictionary)
-food = {"water":1, "vegetables": 2,"canned food":3}
-
-while True:
-  try:
-    weight = int(input("Please enter your pet's weight: "))
-    if weight > 200:
-      print("This is not an available weight!")
-    elif weight < 5:
-      print("This is not am available weight")
-    else:
-      print("Awesome!")
-       # Prints animals name and weight
-      print("'s weight is {} kgs.".format(weight))
-      break
-  except ValueError:
-    print("That was not a valid weight or number, please enter a weight between 5 and 200!")
-
-#def choose_activity()
-
-def check_integer(question, low, high, error):
-    valid = False
-    while not valid:
-        try:
-            number = int(input("{}".format(question)))
-            if low <= number <= high:
-                return number
-            else:
-                print(error)
-                print()
-
- # If an invalid input is made, the prompt comes up again
-        except ValueError:
-            print(error)
 
 # Give the user to pick whether they want to exercise or feed their pet.
 pet_activities = input("Would you like to exercise or feed your pet?: ").strip().lower()
 
-def feed_pet(activity, weight):
-    weight += food[activity]
-    return weight
 
 # This allows the user to see the options and pick one they would like to do if they choose to exercise their pet
 if pet_activities == "feed":
