@@ -1,3 +1,6 @@
+# Dictionary to help code work
+pets = ["dog", "cat",  "bunny", "turtle"]
+
 # Dictionaries for pet activities
 PET_ACTIVITY = {"exercise": 2, "feed": 1}
 
