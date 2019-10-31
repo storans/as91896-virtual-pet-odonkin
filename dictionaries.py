@@ -6,4 +6,4 @@ exercises = {"park playdate": 0, "beach time": 0, "jumbo jog":0}
 exercise_calories = {"park playdate": 0.2, "beach time": 0.3, "jumbo jog":0.4}
 
 # Food options for pet (dictionary)
-food_list = {"kibble": 3, "carrot":2, "canned food":4, "seaweed":2, "vegetables": 3, "water":1}
+food_list = {"water":1, "vegetables": 2,"canned food":3}
