@@ -52,7 +52,7 @@ while True:
     "3. Enter Jumbo Jog\n"
     "4. Exit\n")
 
-    option = check_integer("Please enter number of the choices above:", 1, 4, "This is not an option")
+    option = check_integer("Please enter number of the choices above:", 1, 4, "This is not an option, please try another from the list above and type in numbers!")
 
 
     if option == 1:
@@ -61,10 +61,9 @@ while True:
         activity = "beach time"
     elif option ==3:
         activity = "jumbo jog"
-    elif option == 4:
-        print("You have chosen to quit game! Thank you playing :)")
     else:
-        print("This is not an option. Please choose another number.")
+        print("You have chosen to quit game! Thank you playing :)")
+
 
     weight = exercise_pet(activity, weight)
     print("Your pet now weights {}".format(weight))

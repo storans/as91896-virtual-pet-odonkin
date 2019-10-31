@@ -14,7 +14,7 @@ while True:
     else:
       print("Awesome!")
        # Prints animals name and weight
-      print("{}'s weight is {} kgs.".format(pet_name, weight))
+      print("'s weight is {} kgs.".format(weight))
       break
   except ValueError:
     print("That was not a valid weight or number, please enter a weight between 5 and 200!")
@@ -52,7 +52,7 @@ while True:
     "3. Enter Canned Food\n"
     "4. Exit\n")
 
-    option = check_integer("Please enter number of the choices above:", 1, 4, "This is not an option")
+    option = check_integer("Please enter number of the choices above:", 1, 4, "This is not an option, please try another from the list above and type in numbers!50")
 
 
     if option == 1:
@@ -66,7 +66,7 @@ while True:
     else:
         print("This is not an option. Please choose another number.")
 
-    weight = feed_pet(activity, weight)
+    #weight = feed_pet(activity, weight)
     print("Your pet now weights {}".format(weight))
     if weight > 200:
         print("Your pet has had too much to eat! It has passed away!")
