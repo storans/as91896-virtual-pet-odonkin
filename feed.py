@@ -10,14 +10,14 @@ while True:
     if weight > 200:
       print("This is not an available weight!")
     elif weight < 5:
-      print("This is not an available weight")
+      print("This is not am available weight")
     else:
       print("Awesome!")
        # Prints animals name and weight
-      print("Livs's weight is {} kgs.".format(weight))
+      print("{}'s weight is {} kgs.".format(pet_name, weight))
       break
   except ValueError:
-    print("That was not a valid number!")
+    print("That was not a valid weight or number, please enter a weight between 5 and 200!")
 
 #def choose_activity()
 
@@ -59,8 +59,12 @@ while True:
         activity = "water"
     elif option == 2:
         activity = "vegetables"
+    elif option ==3:
+        activity = "canned food"
+    elif option == 4:
+        print("You have chosen to quit game! Thank you playing :)")
     else:
-        activity =  "canned food"
+        print("This is not an option. Please choose another number.")
 
     weight = feed_pet(activity, weight)
     print("Your pet now weights {}".format(weight))
