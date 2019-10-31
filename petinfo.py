@@ -27,7 +27,7 @@ while True:
     if weight > 200:
       print("This is not an available weight!")
     elif weight < 5:
-      print("This is not am available weight")
+      print("This is not an available weight")
     else:
       print("Awesome!")
        # Prints animals name and weight
