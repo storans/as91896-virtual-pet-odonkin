@@ -1,3 +1,8 @@
-print("Thank you for playing! See you next time :)")
+final = ["q", "o"]
 
-print("{} will miss you!".format(pet_name))
+end_screen = input("Press q to quit and o to continue: ")
+
+if endscreen = "q":
+    print("Thank you for playing! Have a good day :)")
+else:
+

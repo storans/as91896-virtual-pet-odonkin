@@ -40,7 +40,7 @@ def check_integer(question, low, high, error):
 pet_activities = input("Would you like to exercise or feed your pet?: ").strip().lower()
 
 def feed_pet(activity, weight):
-    weight -= food[activity]
+    weight += food[activity]
     return weight
 
 # This allows the user to see the options and pick one they would like to do if they choose to exercise their pet

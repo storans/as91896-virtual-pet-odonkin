@@ -68,10 +68,12 @@ while True:
     print("Your pet now weights {}".format(weight))
     if weight > 200:
         print("Your pet has not had enough exercise! It has passed away!")
+        print("Thank you for playing, rerun program to start again.")
         break
 
     elif weight < 5:
         print("You pet has done too much exercise and not had enough to eat, it has passed away!")
+        print("Thank you for playing, rerun program to start again.")
         break
 
     else:
