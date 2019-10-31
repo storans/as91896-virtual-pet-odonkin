@@ -34,4 +34,4 @@ while True:
       print("{}'s weight is {} kgs.".format(pet_name, weight))
       break
   except ValueError:
-    print("That was not a valid number!")
+    print("That was not a valid weight or number, please enter a weight between 5 and 200!")
