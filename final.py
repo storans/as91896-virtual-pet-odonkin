@@ -137,7 +137,7 @@ if __name__ == "__main__":
 
                     option = check_integer("Please enter number of the choices above:", 1, 4, "This is not an option, please try another from the list above and type in numbers!")
 
-# Options for food so the computer knows what exercise the user has chosen
+# Options for food so the computer knows what exercise the user has chosen so they can use it in the equation
                     if option == 1:
                         activity = "water"
                     elif option == 2:
