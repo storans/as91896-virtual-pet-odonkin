@@ -83,9 +83,8 @@ if __name__ == "__main__":
     # First is a variable set to True to check whether the program should continue running.
     tracking_on = True
     while tracking_on == True:
-        # Start an infinite loop to prompt for a correct option value
+        # Start an infinite loop to try for a correct option value
         while True:
-        # Create an option variable to store the user's chosen option.
 
 # Give the user to pick whether they want to exercise or feed their pet.
             pet_activities = input("Would you like to exercise or feed your pet?: ").strip().lower()
@@ -98,8 +97,10 @@ if __name__ == "__main__":
                     "3. Enter Jumbo Jog (Pet loses 3kg)\n"
                     "4. Exit\n")
 
+                    # This makes sure if the user doesn't enter an option, it will display an error message to tell them and then repeat the question
                     option = check_integer("Please enter number of the choices above:", 1, 4, "This is not an option, please try another from the list above and type in numbers!")
 
+# This makes sure the program knows which option is which so it can connect it with the points
                     if option == 1:
                         activity = "park playdate"
                     elif option == 2:
@@ -112,6 +113,7 @@ if __name__ == "__main__":
                         tracking_on = False
                         break
 
+# This minuses the weight of the activity off of the pets weight and then displays it for the user to see
                     weight = exercise_pet(activity, weight)
                     print("Your pet now weights {}kgs".format(weight))
                     if weight > 30:
@@ -135,7 +137,7 @@ if __name__ == "__main__":
 
                     option = check_integer("Please enter number of the choices above:", 1, 4, "This is not an option, please try another from the list above and type in numbers!")
 
-
+# Options for food so the computer knows what exercise the user has chosen
                     if option == 1:
                         activity = "water"
                     elif option == 2:
@@ -148,6 +150,7 @@ if __name__ == "__main__":
                         tracking_on = False
                         break
 
+# Equation that adds the kgs from the food the user has chosen to the weight of the pet
                     weight = feed_pet(activity, weight)
                     print("Your pet now weights {}kgs".format(weight))
                     if weight > 30:
