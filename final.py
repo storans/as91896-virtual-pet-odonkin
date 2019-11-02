@@ -40,6 +40,10 @@ FOOD = {"water":1, "vegetables": 2,"canned food":3}
 # Prints welcome screen
 print("Welcome to Virtual Pet!")
 
+print("Create your pet, exercise and feed it!")
+print("But make sure your taking care of it properly! If goes under 2kgs or 30kgs, it will die!")
+print("Have fun, enjoy and lets get started!")
+print()
 # Prints pet list
 print(PETS)
 
@@ -65,7 +69,7 @@ print("Awesome! You now own a {} named {}! ".format(virtual_pet, pet_name))
 # Creates loop if it does not fit the criteria
 while True:
   try:
-    weight = int(input("Please enter a weight for your pet between 2kgs and 30kgs: "))
+    weight = int(input("Please enter a weight in kgs for your pet between 2 and 30: "))
     if weight > 30:
       print("This is not an available weight!")
     elif weight < 2:
