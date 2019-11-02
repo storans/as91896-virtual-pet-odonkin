@@ -41,7 +41,7 @@ FOOD = {"water":1, "vegetables": 2,"canned food":3}
 print("Welcome to Virtual Pet!")
 
 print("Create your pet, exercise and feed it!")
-print("But make sure your taking care of it properly! If goes under 2kgs or 30kgs, it will die!")
+print("But make sure your taking care of it properly! If goes under 2kgs or over 30kgs, it will die!")
 print("Have fun, enjoy and lets get started!")
 print()
 # Prints pet list
