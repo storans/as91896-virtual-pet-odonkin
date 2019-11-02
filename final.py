@@ -65,7 +65,7 @@ print("Awesome! You now own a {} named {}! ".format(virtual_pet, pet_name))
 # Creates loop if it does not fit the criteria
 while True:
   try:
-    weight = int(input("Please enter your pet's weight: "))
+    weight = int(input("Please enter a weight for your pet between 2kgs and 30kgs: "))
     if weight > 30:
       print("This is not an available weight!")
     elif weight < 2:
@@ -92,9 +92,9 @@ if __name__ == "__main__":
             # This allows the user to see the options and pick one they would like to do if they choose to exercise their pet
             if pet_activities == "exercise":
                     print("Awesome, let's have a look at the exercises!")
-                    print("1. Enter Park Playdate (Pet loses 1kg)\n"
-                    "2. Enter Beach Time (Pet loses 2kg)\n"
-                    "3. Enter Jumbo Jog (Pet loses 3kg)\n"
+                    print("1. Select 1 for Park Playdate (Pet loses 1kg)\n"
+                    "2. Select 2 for Beach Time (Pet loses 2kg)\n"
+                    "3. Select 3 for Jumbo Jog (Pet loses 3kg)\n"
                     "4. Exit\n")
 
                     # This makes sure if the user doesn't enter an option, it will display an error message to tell them and then repeat the question
@@ -119,10 +119,14 @@ if __name__ == "__main__":
                     if weight > 30:
                         print("Your pet has not had enough exercise! It has passed away!")
                         print("Thank you for playing, rerun program to start again.")
+                        tracking_on = False
+                        break
 
                     elif weight < 2:
-                        print("You pet has done too much exercise and not had enough to eat, it has passed away!")
+                        print("Your pet has done too much exercise or not had enough to eat, it has passed away!")
                         print("Thank you for playing, rerun program to start again.")
+                        tracking_on = False
+                        break
 
                     else:
                         print("At the moment, your pet is healthy! Good Job! :)")
@@ -130,9 +134,9 @@ if __name__ == "__main__":
             # This allows the user to see the options and pick one they would like to do if they choose to exercise their pet
             elif pet_activities == "feed":
                     print("Awesome, let's take a look in the cupboards!")
-                    print("1. Enter Water (Pet gains 1kg)\n"
-                    "2. Enter Vegetables (Pet gains 2kg)\n"
-                    "3. Enter Canned Food (Pet gains 3kg)\n"
+                    print("1. Select 1 for Water (Pet gains 1kg)\n"
+                    "2. Select 2 for Vegetables (Pet gains 2kg)\n"
+                    "3. Select 3 for Canned Food (Pet gains 3kg)\n"
                     "4. Exit\n")
 
                     option = check_integer("Please enter number of the choices above:", 1, 4, "This is not an option, please try another from the list above and type in numbers!")
@@ -156,10 +160,14 @@ if __name__ == "__main__":
                     if weight > 30:
                         print("Your pet has had too much to eat! It has passed away!")
                         print("Thank you for playing, rerun program to start again.")
+                        tracking_on = False
+                        break
 
                     elif weight < 2:
-                        print("You pet has not had enough to eat, it has passed away!")
+                        print("Your pet has not had enough to eat, it has passed away!")
                         print("Thank you for playing, rerun program to start again.")
+                        tracking_on = False
+                        break
 
                     else:
                         print("At the moment, your pet is healthy! Good Job! :)")
