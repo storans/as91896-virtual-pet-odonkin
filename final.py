@@ -176,3 +176,4 @@ if __name__ == "__main__":
                     else:
                         print("At the moment, your pet is healthy! Good Job! :)")
 
+# Code will loop until user dies or chooses to quit
