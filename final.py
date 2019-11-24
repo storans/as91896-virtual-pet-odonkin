@@ -1,4 +1,4 @@
-# This is a program that would allow a child to create a pet, feed and exercise them and make sure they are caring for them properly
+# This is a program that would allow a child to create a cool pet, feed and exercise them and make sure they are caring for them properly
 # It also kills the pet if it goes under 2 kgs or over 30kgs
 # This game is not a correct way to look after a pet BUT has some good attributes in taking care of a pet.
 # Also good for kids maths development as they can use it to help them work our adding and subtracting
